@@ -7,6 +7,20 @@ public class Alumno
     public string Apellidos { get; set; }
     public DateOnly FechaDeNacimiento { get; set; }
 
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Id, Nombres, Apellidos);
+    }
+
+    public override bool Equals(object? obj)
+    {
+        var alumno = obj as Alumno;
+        return alumno != null &&
+               Id == alumno.Id &&
+               Nombres == alumno.Nombres &&
+               Apellidos == alumno.Apellidos;
+    }
+
     public override string ToString()
     {
         return $"Id:{Id}, Nombre:{NombreCompleto()}, Nacido en: {FechaDeNacimiento}";
