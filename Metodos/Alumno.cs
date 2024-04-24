@@ -1,6 +1,6 @@
 ﻿namespace Metodos;
 
-public class Alumno
+public class Alumno : IImprimible
 {
     public int Id { get; set; }
     public string Nombres { get; set; }
@@ -49,5 +49,10 @@ public class Alumno
             return NombreCompleto().ToUpper();
         else
             return NombreCompleto().ToLower();
+    }
+
+    public void Imprimir()
+    {
+        Console.WriteLine(this.ToString());
     }
 }
