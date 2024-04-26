@@ -1,11 +1,12 @@
-﻿namespace Metodos;
+﻿using System.Reflection.Metadata.Ecma335;
 
-public class Alumno : IImprimible
+namespace Metodos;
+
+public class Alumno : Persona, ITachiGGable, IImprimible
 {
-    public int Id { get; set; }
-    public string Nombres { get; set; }
-    public string Apellidos { get; set; }
+    private string alias;
     public DateOnly FechaDeNacimiento { get; set; }
+    public string Alias { get => alias; set => alias = value; }
 
     public override int GetHashCode()
     {
