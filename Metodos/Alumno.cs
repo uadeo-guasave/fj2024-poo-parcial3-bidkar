@@ -54,6 +54,6 @@ public class Alumno : Persona, ITachiGGable, IImprimible
 
     public void Imprimir()
     {
-        Console.WriteLine(this.ToString());
+        Console.WriteLine("Soy un(a) alumno(a)");
     }
 }
