@@ -21,4 +21,8 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TiendaEnLinea\TiendaEnLinea.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -8,7 +8,19 @@ public class Cliente
     public string Domicilio { get; set; }
     public string Telefono { get; set; }
 
-    public Cliente Recuperar(int id)
+    public bool Validar()
+    {
+        var resultado = true;
+        if (Id == 0) resultado = false;
+        if (String.IsNullOrEmpty(Nombre)) resultado = false;
+        if (String.IsNullOrEmpty(Apellidos)) resultado = false;
+        if (String.IsNullOrEmpty(Domicilio)) resultado = false;
+        if (String.IsNullOrEmpty(Telefono)) resultado = false;
+
+        return resultado;
+    }
+
+    public static Cliente Recuperar(int id)
     {
         var cliente = new Cliente();
 
