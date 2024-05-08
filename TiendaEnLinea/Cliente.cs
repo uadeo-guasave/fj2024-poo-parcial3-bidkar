@@ -2,11 +2,22 @@
 
 public class Cliente
 {
+    public static int Creados { get; private set; } = 0;
     public int Id { get; set; }
     public string Nombre { get; set; }
     public string Apellidos { get; set; }
     public string Domicilio { get; set; }
     public string Telefono { get; set; }
+
+    public Cliente()
+    {
+        Cliente.Creados++;
+    }
+
+    public bool Guardar()
+    {
+        return Validar();
+    }
 
     public bool Validar()
     {

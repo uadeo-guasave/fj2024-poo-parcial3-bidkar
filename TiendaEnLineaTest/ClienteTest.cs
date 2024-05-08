@@ -5,6 +5,45 @@ namespace TiendaEnLineaTest;
 public class ClienteTest
 {
     [Test]
+    public void ContarClientes()
+    {
+        var cliente1 = new Cliente();
+        var cliente2 = new Cliente();
+        var cliente3 = new Cliente();
+
+        var esperado = 3;
+
+        Assert.That(Cliente.Creados, Is.EqualTo(esperado));
+    }
+
+    [Test]
+    public void GuardarClienteNoValido()
+    {
+        var cliente = new Cliente();
+
+        var sePudoGuardar = cliente.Guardar();
+
+        Assert.That(sePudoGuardar, Is.False);
+    }
+
+    [Test]
+    public void GuardarClienteValido()
+    {
+        var cliente = new Cliente
+        {
+            Id = 1,
+            Nombre="Celia",
+            Apellidos="Payan",
+            Domicilio="Conocido",
+            Telefono="687000000"
+        };
+
+        var sePudoGuardar = cliente.Guardar();
+
+        Assert.That(sePudoGuardar, Is.True);
+    }
+
+    [Test]
     public void ClienteValido()
     {
         var cliente = new Cliente();
