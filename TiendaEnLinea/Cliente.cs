@@ -1,6 +1,6 @@
 ﻿namespace TiendaEnLinea;
 
-public class Cliente
+public class Cliente : IABCable<Cliente>
 {
     public static int Creados { get; private set; } = 0;
     public int Id { get; set; }
